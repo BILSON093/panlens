@@ -58,6 +58,8 @@ details[open]>summary::before{content:"▾"}
 .row .nm{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .row .sz{flex:none;font-variant-numeric:tabular-nums;color:#3c4c60;font-size:12px}
 .row .pc{flex:none;width:52px;text-align:right;color:var(--dim);font-size:11.5px}
+.tb{display:block;flex:none;width:92px;height:6px;border-radius:3px;background:#e9eff7;overflow:hidden}
+.tb i{display:block;height:100%;border-radius:3px}
 .leaf{display:flex;gap:10px;align-items:center;padding:2px 0 2px 17px;
   border-left:1px dashed #d7e0ec;margin-left:8px}
 .dot{width:8px;height:8px;border-radius:3px;flex:none}
@@ -78,6 +80,15 @@ def human(n):
 
 def _esc(text):
     return html.escape(str(text or ""), quote=True)
+
+
+DIR_BAR = "#5b86bd"
+
+
+def _bar(pct, color):
+    """目录树里的比例条。"""
+    return ("<span class='tb'><i style='width:%.2f%%;background:%s'></i></span>"
+            % (max(pct, 0.0), color))
 
 
 def _pct(part, whole):
@@ -218,17 +229,17 @@ def _tree(store, root, parent_size, depth, per_level, budget):
             inner = _tree(store, k["path"], k["size"], depth - 1, per_level, budget)
             out.append(
                 "<details><summary><div class='row'>"
-                "<span class='nm'>%s</span>"
+                "<span class='nm'>%s</span>%s"
                 "<span class='sz'>%s</span><span class='pc'>%.1f%%</span></div></summary>%s</details>"
-                % (_esc(k["name"]), human(k["size"]), pct, inner or
-                   "<div class='more'>（未展开 / 无下级数据）</div>")
+                % (_esc(k["name"]), _bar(pct, DIR_BAR), human(k["size"]), pct,
+                   inner or "<div class='more'>（未展开 / 无下级数据）</div>")
             )
         else:
             out.append(
                 "<div class='leaf'><i class='dot' style='background:%s'></i>"
-                "<span class='nm'>%s</span><span class='sz'>%s</span>"
+                "<span class='nm'>%s</span>%s<span class='sz'>%s</span>"
                 "<span class='pc'>%.1f%%</span></div>"
-                % (meta["c"], _esc(k["name"]), human(k["size"]), pct)
+                % (meta["c"], _esc(k["name"]), _bar(pct, meta["c"]), human(k["size"]), pct)
             )
     if tail:
         out.append(
