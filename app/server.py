@@ -10,7 +10,7 @@ import time
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
-from . import demo
+from . import demo, report
 from .baidu import AuthError, BaiduPan, PanError, normalize_cookie
 from .qrlogin import QrLogin
 from .scanner import Scanner
@@ -376,9 +376,27 @@ class Handler(BaseHTTPRequestHandler):
                 self._send_json({"ok": True, "items": store.search(q, 150)})
         elif path == "/api/export":
             p = (qs.get("path") or ["/"])[0] or "/"
-            self._export_csv(p)
+            fmt = (qs.get("fmt") or ["csv"])[0].lower()
+            if fmt == "html":
+                self._export_html(p)
+            else:
+                self._export_csv(p)
         else:
             self._send_json({"ok": False, "error": "未知接口"}, 404)
+
+    def _export_html(self, root):
+        """导出自包含的 HTML 空间报告。"""
+        body = report.build(STATE.store, root, depth=4, per_level=30)
+        data = body.encode("utf-8")
+        name = root.rstrip("/").split("/")[-1] or "root"
+        fname = urllib.parse.quote(name + "-空间报告.html")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Disposition", "attachment; filename*=UTF-8''" + fname)
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(data)
 
     def _export_csv(self, root):
         import csv

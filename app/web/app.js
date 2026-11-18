@@ -1087,6 +1087,11 @@
       if (!S.node) { toast('没有可导出的数据'); return; }
       window.location = '/api/export?path=' + encodeURIComponent(S.path);
     };
+    $('#btnExportHtml').onclick = () => {
+      if (!S.node) { toast('没有可导出的数据'); return; }
+      toast('正在生成 HTML 报告…');
+      window.location = '/api/export?fmt=html&path=' + encodeURIComponent(S.path);
+    };
 
     $$('#depthSeg button').forEach(b => b.onclick = () => {
       $$('#depthSeg button').forEach(x => x.classList.remove('on'));
