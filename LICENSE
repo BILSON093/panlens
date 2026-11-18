@@ -1,0 +1,73 @@
+PanLens 非商业许可协议  v1.0
+PanLens Non-Commercial License  v1.0
+
+版权所有 (c) 2026 BILSON093
+Copyright (c) 2026 BILSON093
+
+--------------------------------------------------------------------------
+一、许可授予
+
+在符合本协议全部条款的前提下，任何个人或组织被免费授予以下权利：
+
+1. 使用、复制本项目（PanLens，含源代码、文档与配图）的全部或部分；
+2. 修改本项目，并可分发修改后的版本；
+3. 将本项目用于个人学习、技术研究、教学演示或其它非商业目的。
+
+二、分发条件
+
+分发本项目或其修改版本（无论以源码还是二进制形式）时，必须：
+
+1. 保留本协议文件及原始版权声明；
+2. 在显著位置说明本项目来源，并注明是否经过修改；
+3. 不得移除或修改代码中已有的版权与来源标注。
+
+三、商业用途限制
+
+未经版权持有人事先书面授权，不得将本项目（含其修改版本）用于任何商业目的，
+包括但不限于：
+
+1. 销售本项目或其衍生作品；
+2. 作为收费服务、付费软件、订阅服务的一部分提供；
+3. 在经营性活动中使用，或以获取商业利益为目的使用；
+4. 用于商业产品的功能集成或内部商业系统。
+
+商业授权请联系版权持有人商议。
+
+四、免责声明
+
+本软件按「现状」提供，不附带任何明示或默示的担保，包括但不限于对适销性、
+特定用途适用性和非侵权性的担保。在任何情况下，作者或版权持有人均不对因本软件
+或本软件的使用或其它交易而产生的任何索赔、损害或其它责任负责，无论是合同诉讼、
+侵权行为还是其它方式引起的。
+
+使用者应自行遵守所接入服务（包括但不限于百度网盘）的用户协议与相关法律法规。
+因使用本软件导致的账号受限、数据丢失或其它损失，由使用者自行承担。
+
+五、协议终止
+
+一旦违反本协议任一条款，本协议授予的全部权利立即终止，使用者须停止使用并
+销毁所有副本。
+
+--------------------------------------------------------------------------
+English Summary (for reference only; the Chinese text above prevails)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify and distribute the Software, subject to the following conditions:
+
+1. The above copyright notice and this license shall be included in all copies
+   or substantial portions of the Software.
+2. The origin of the Software must be clearly stated, and any modification must
+   be indicated.
+3. Commercial use of any kind is NOT permitted without prior written permission
+   from the copyright holder. This includes selling the Software or derivative
+   works, offering it as part of a paid service, or using it in commercial
+   products or internal business systems.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,20 @@
+# 运行时数据（含登录凭据与真实文件清单，绝对不要提交）
+data/
+data_*/
+config.json
+*.db
+*.db-wal
+*.db-shm
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# 工具与临时文件
+.playwright-cli/
+*.log
+.DS_Store
+Thumbs.db
